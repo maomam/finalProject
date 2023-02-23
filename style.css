@@ -174,7 +174,7 @@ header {
   padding-right: 2rem;
   padding-left: 2rem;
   justify-content: center;
-  align-items: center;
+  align-items: end;
 }
 
 #hamburger {
@@ -320,7 +320,7 @@ ul {
 
 .float {
   display: flex;
-  margin-top: 2.5rem;
+  margin-top: 3.5rem;
   justify-content: space-between;
   align-items: center;
   position: absolute;
@@ -350,7 +350,7 @@ nav.active {
   grid-template-columns: 1fr;
   gap: 11rem;
   padding-right: 1.6rem;
-  padding-top: 2.6rem;
+  padding-top: 3.6rem;
   padding-left: 4rem;
   align-content: start;
   justify-content:space-evenly;
