@@ -314,7 +314,7 @@ function draw() {
         if (playing) {
                 elements.map(shape);
                 let prop = elements[10].getBoundingClientRect();
-                window.navigator.vibrate(prop.bottom/500); 
+                window.navigator.vibrate(prop.bottom/50); 
                 let anim = elements[10].getAnimations();
                 let curr; 
                 try {
