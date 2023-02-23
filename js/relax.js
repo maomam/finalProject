@@ -314,6 +314,7 @@ function draw() {
         if (playing) {
                 elements.map(shape);
                 let prop = elements[10].getBoundingClientRect();
+                window.navigator.vibrate(prop.bottom/500); 
                 let anim = elements[10].getAnimations();
                 let curr; 
                 try {
@@ -355,9 +356,7 @@ function draw() {
                        document.body.appendChild(h2);
                        document.body.appendChild(h3);
                       }
-                     
-                //let dur = anim[0].duration;
-               
+  
         }
        
 }
