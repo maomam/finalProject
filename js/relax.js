@@ -19,7 +19,7 @@ const line3 = document.getElementById("line3");
 let playing = false;
 let button;
 
-let masterVolume = -18; // in decibels (dB);
+let masterVolume = -9; // in decibels (dB);
 let scaleNotes = Tonal.Scale.get("C3 phrygian").notes;
 
 let chords = [];
