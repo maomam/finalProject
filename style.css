@@ -572,4 +572,9 @@ cursor: pointer;
   width: 100vw;
   justify-content:center;
   }
+
+  header {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
 }
