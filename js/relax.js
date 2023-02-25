@@ -19,7 +19,7 @@ const line3 = document.getElementById("line3");
 let playing = false;
 let button;
 
-let masterVolume = -22; // in decibels (dB);
+let masterVolume = -12; // in decibels (dB);
 let scaleNotes = Tonal.Scale.get("C3 phrygian").notes;
 
 let chords = [];
@@ -314,10 +314,11 @@ function draw() {
         if (playing) {
                 elements.map(shape);
                 let prop = elements[10].getBoundingClientRect();
-            
-                let vib = map(prop.y, lungs[10].y, window.height, 350, 400)
+             
+    
+                let vib = map(prop.y, 0, window.height, 0, 300)
                 navigator.vibrate(vib); 
-                 
+        
                 let anim = elements[10].getAnimations();
                 let curr; 
                 try {
