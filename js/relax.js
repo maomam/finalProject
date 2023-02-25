@@ -314,10 +314,12 @@ function draw() {
         if (playing) {
                 elements.map(shape);
                 let prop = elements[10].getBoundingClientRect();
-             
+                elements[10].onanimationiteration = () => {
+                        navigator.vibrate(255); 
+                        };
     
-                let vib = map(prop.y, 50, window.height-50, 150, 300)
-                navigator.vibrate(vib); 
+                //let vib = map(prop.y, 50, window.height-50, 150, 300)
+            
         
                 let anim = elements[10].getAnimations();
                 let curr; 
