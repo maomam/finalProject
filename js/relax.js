@@ -314,8 +314,8 @@ function draw() {
         if (playing) {
                 elements.map(shape);
                 let prop = elements[10].getBoundingClientRect();
-                if(prop.bottom = elements[10].strnY ){
-               //let vib = map(prop.bottom, elements[10].strnY, window.height, 350, 100)
+                if(prop.y = elements[10].strnY ){
+               //let vib = map(prop.y, elements[10].strnY, window.height, 350, 100)
                 navigator.vibrate(255); 
                  }
                 let anim = elements[10].getAnimations();
