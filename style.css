@@ -344,7 +344,7 @@ nav.active {
   position: fixed;
   right:0em;
   top: 0em;
-  height: 100vh;
+  height: 100%;
   width: 25vw;
   /* Layout */
   display: grid;
@@ -568,9 +568,8 @@ cursor: pointer;
   right:0em;
   height: 100%;
   width: 100%;
-  padding-left: 0rem;
+  padding-left: 2rem;
   padding-right: 2rem;
-  margin-left: 2rem;
   justify-content:center;
   }
 
