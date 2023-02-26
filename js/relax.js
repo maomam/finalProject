@@ -233,11 +233,9 @@ function playSound() {
       motif = new Motif([3, 2, 1,  0, 1, 2, 3, 4, 5, 6, 7, 8], "xxxx---xxxxxxxx--","6n", "2n");
       //let motif2 = new Motif([ 0, 1, 1, 2, 3, 4, 5, 5], "----xxxxxxxx", "1s", "2n"); // 7 -> one octaave higher
       noise = new Tone.Noise("white").start();
-      //noise.mute = true; 
+      noise.mute = true; 
        autoFilter = new Tone.AutoFilter({
 	frequency: "1n",
-        min : 400,
-	max : 15000,
 	baseFrequency: 250,
 	octaves: 1
 }).toDestination().start();

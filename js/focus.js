@@ -230,7 +230,8 @@ function playSound() {
         // Create 2 different melodic motifs
         motif = new Motif([3, 2, 1, 0, 1, 2, 3, 4], "xxxx---xxxx--", "8n", "1n");
         noise = new Tone.Noise("brown").start();
-        noise.volume = masterVolume +6;
+        noise.mute = true; 
+     
         autoFilter = new Tone.AutoFilter({
                 frequency: "1n",
                 baseFrequency: 300,
@@ -291,6 +292,9 @@ function draw() {
         if (playing) {
                 elements.map(shape);
                 let prop = elements[10].getBoundingClientRect();
+                elements[10].onanimationiteration = () => {
+                        navigator.vibrate(255); 
+                        };
                 let anim = elements[10].getAnimations();
                 let curr; 
                 try {

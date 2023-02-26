@@ -19,7 +19,7 @@ const line3 = document.getElementById("line3");
 let playing = false;
 let button;
 
-let masterVolume = -24; // in decibels (dB);
+let masterVolume = -12; // in decibels (dB);
 let scaleNotes = Tonal.Scale.get("E4 minor").notes;
 
 let chords = [];
@@ -228,7 +228,7 @@ function playSound() {
       motif = new Motif([ 1,  0, 1, 2 ], "xx-xx-","8n", "8n");
       //let motif2 = new Motif([ 0, 1, 1, 2, 3, 4, 5, 5], "----xxxxxxxx", "1s", "2n"); // 7 -> one octaave higher
       noise = new Tone.Noise("pink").start();
-        noise.volume = masterVolume +6;
+       noise.mute = true; 
         autoFilter = new Tone.AutoFilter({
                 frequency: "1n",
                 baseFrequency: 350,
@@ -293,6 +293,9 @@ function draw() {
                 let prop = elements[10].getBoundingClientRect();
                 let anim = elements[10].getAnimations();
                 let curr; 
+                elements[10].onanimationiteration = () => {
+                        navigator.vibrate(255); 
+                        };
                 try {
                         curr = anim[0].currentTime;
                         let w = map(curr, 0, 14991, 0, 1000 )
