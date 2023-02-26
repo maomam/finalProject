@@ -571,6 +571,7 @@ cursor: pointer;
   width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
+  justify-content:center;
   }
 
   header {
