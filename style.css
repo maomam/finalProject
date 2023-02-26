@@ -562,6 +562,7 @@ cursor: pointer;
 @media screen and (max-width: 740px) {
   nav.active {
   width: 100%;
+  bottom: 0rem; 
   padding-left: 2rem;
   padding-right: 2rem;
   }
