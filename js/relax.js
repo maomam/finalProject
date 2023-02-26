@@ -19,7 +19,7 @@ const line3 = document.getElementById("line3");
 let playing = false;
 let button;
 
-let masterVolume = -9; // in decibels (dB);
+let masterVolume = -8; // in decibels (dB);
 let scaleNotes = Tonal.Scale.get("C3 phrygian").notes;
 
 let chords = [];
@@ -222,29 +222,31 @@ function playSound() {
       poly = new Tone.PolySynth(Tone.AMSynth, {
         envelope: {
           attack: 1,
-          release: 2,
+          release: 1,
         },
         volume: masterVolume
       });
      
-     poly.toDestination(); // Tone.Master
+    // poly.toDestination(); // Tone.Master
     
       // Create 2 different melodic motifs
       motif = new Motif([3, 2, 1,  0, 1, 2, 3, 4, 5, 6, 7, 8], "xxxx---xxxxxxxx--","6n", "2n");
       //let motif2 = new Motif([ 0, 1, 1, 2, 3, 4, 5, 5], "----xxxxxxxx", "1s", "2n"); // 7 -> one octaave higher
       noise = new Tone.Noise("white").start();
-      noise.volume = -8; 
+      //noise.mute = true; 
        autoFilter = new Tone.AutoFilter({
 	frequency: "1n",
+        min : 400,
+	max : 15000,
 	baseFrequency: 250,
-        volume: -8,
 	octaves: 1
 }).toDestination().start();
 // connect the noise
   noise.connect(autoFilter);
 // start the autofilter LFO
       motif.synth.connect(autoFilter);
-     //motif.synth.toDestination();
+    //  motif.synth.volume = -24; 
+    // motif.synth.toDestination();
 
       //motif2.synth.toDestination();
      // Tone.Transport.schedule(changeChord, "12");

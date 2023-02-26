@@ -18,7 +18,7 @@ const line3 = document.getElementById("line3");
 let playing = false;
 let button;
 
-let masterVolume = -24; // in decibels (dB);
+let masterVolume = -12; // in decibels (dB);
 
 
 

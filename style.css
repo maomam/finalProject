@@ -578,3 +578,11 @@ cursor: pointer;
   padding-left: 1rem;
 }
 }
+
+@media screen and (max-width: 400px) {
+  body {
+ display: grid; 
+ grid-template-columns: 1fr;
+ grid-template-rows: 1fr 6fr;
+}
+}
