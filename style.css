@@ -345,7 +345,7 @@ nav.active {
   right:0em;
   top: 0em;
   height: 100%;
-  width: 25vw;
+  width: 25%;
   /* Layout */
   display: grid;
   grid-template-columns: 1fr;
@@ -555,10 +555,7 @@ cursor: pointer;
 
 @media screen and (max-width: 1000px) {
   nav.active {
-  top: 0em;
-  right:0em;
-  height: 100vh;
-  width: 50vw;
+  width: 50%;
   justify-content: space-evenly;
   }
 }
@@ -567,7 +564,6 @@ cursor: pointer;
   width: 100%;
   padding-left: 2rem;
   padding-right: 2rem;
-  justify-content:center;
   }
 
   header {
