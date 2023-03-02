@@ -212,6 +212,8 @@ const shape = (path,i) => {
 function playSound() {
         playing = true; 
         button.addClass("dissappear");
+        bauch.classList.add("breathEnergize");
+        lunge.classList.add("breathEnergize");
         Tone.Master.volume.value = masterVolume;
         Tone.Transport.bpm.value = 60; // default 120
 
@@ -228,10 +230,9 @@ function playSound() {
       motif = new Motif([ 1,  0, 1, 2 ], "xx-xx-","8n", "8n");
       //let motif2 = new Motif([ 0, 1, 1, 2, 3, 4, 5, 5], "----xxxxxxxx", "1s", "2n"); // 7 -> one octaave higher
       noise = new Tone.Noise("pink").start();
-       noise.mute = true; 
         autoFilter = new Tone.AutoFilter({
-                frequency: "1n",
-                baseFrequency: 350,
+                frequency: "2n",
+                baseFrequency: "E4",
                 octaves: 1
         }).toDestination().start();
         // connect the noise
@@ -307,9 +308,11 @@ function draw() {
                         noise.stop();
                         Tone.Transport.stop(); 
                        progress.classList.add("dissappear");
+                       bauch.classList.remove("breathEnergize");
+                       lunge.classList.remove("breathEnergize");
                        mund.classList.add("dissappear");
-                       bauch.classList.add("dissappear");
-                       lunge.classList.add("dissappear");
+                       bauch.classList.add("dissappearOrgan");
+                       lunge.classList.add("dissappearOrgan");
                        nase.classList.add("dissappear");
                        bar.classList.add("dissappear");
                        augen.classList.add("dissappear");
@@ -377,7 +380,7 @@ class Motif {
             }
           }, this.tempo);
       
-          this.loop.start(1);
+          //this.loop.start(1);
         }
       }
       

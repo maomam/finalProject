@@ -215,6 +215,8 @@ const shape = (path,i) => {
 function playSound() {
         playing = true;
         button.addClass("dissappear");
+        bauch.classList.add("breathFocus");
+        lunge.classList.add("breathFocus");
         Tone.Master.volume.value = masterVolume;
         Tone.Transport.bpm.value = 60; // default 120
 
@@ -230,11 +232,11 @@ function playSound() {
         // Create 2 different melodic motifs
         motif = new Motif([3, 2, 1, 0, 1, 2, 3, 4], "xxxx---xxxx--", "8n", "1n");
         noise = new Tone.Noise("brown").start();
-        noise.mute = true; 
+       // noise.mute = true; 
      
         autoFilter = new Tone.AutoFilter({
                 frequency: "1n",
-                baseFrequency: 300,
+                baseFrequency: "G#3",
                 octaves: 1
         }).toDestination().start();
         // connect the noise
@@ -291,6 +293,7 @@ function playSound() {
 function draw() {
         if (playing) {
                 elements.map(shape);
+            
                 let prop = elements[10].getBoundingClientRect();
                 elements[10].onanimationiteration = () => {
                         navigator.vibrate(255); 
@@ -299,7 +302,6 @@ function draw() {
                 let curr; 
                 try {
                         curr = anim[0].currentTime;
-                        console.log(curr);
                         let w = map(curr, 0, 34991, 0, 1000 )
                         progress.setAttribute("width", w);
                       } catch(e) {
@@ -308,10 +310,12 @@ function draw() {
                         autoFilter.stop();
                         noise.stop();
                         Tone.Transport.stop(); 
+                        bauch.classList.remove("breathFocus");
+                        lunge.classList.remove("breathFocus");
                        progress.classList.add("dissappear");
                        mund.classList.add("dissappear");
-                       bauch.classList.add("dissappear");
-                       lunge.classList.add("dissappear");
+                       bauch.classList.add("dissappearOrgan");
+                       lunge.classList.add("dissappearOrgan");
                        nase.classList.add("dissappear");
                        bar.classList.add("dissappear");
                        augen.classList.add("dissappear");
@@ -380,7 +384,7 @@ class Motif {
             }
           }, this.tempo);
       
-          this.loop.start(1);
+          //this.loop.start(1);
         }
       }
       

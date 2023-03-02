@@ -207,51 +207,46 @@ const shape = (path,i) => {
         path.style.setProperty("--dissolveX", cont[i].x + "px");
         path.style.setProperty("--dissolveY", cont[i].y + "px");
         path.style.animation = ('relax 12s  5 normal');
-      
-       
 };
 
 function playSound() {
-        playing = true; 
-        button.addClass("dissappear");
-        Tone.Master.volume.value = masterVolume;
-       
-        Tone.Transport.bpm.value = 60; // default 120
+  playing = true;
+  button.addClass("dissappear");
+  bauch.classList.add("breathRelax");
+  lunge.classList.add("breathRelax");
+  Tone.Master.volume.value = masterVolume;
+  Tone.Transport.bpm.value = 60; // default 120
+
+
+ /* poly = new Tone.PolySynth(Tone.AMSynth, {
+    envelope: {
+      attack: 1,
+      release: 1,
+    },
+    volume: masterVolume
+  });*/
+
+  // poly.toDestination(); // Tone.Master
+
+  // Create 2 different melodic motifs
+  motif = new Motif([3, 2, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8], "xxxx---xxxxxxxx--", "6n", "2n");
+  //let motif2 = new Motif([ 0, 1, 1, 2, 3, 4, 5, 5], "----xxxxxxxx", "1s", "2n"); // 7 -> one octaave higher
+  noise = new Tone.Noise("white").start();
   
-
-      poly = new Tone.PolySynth(Tone.AMSynth, {
-        envelope: {
-          attack: 1,
-          release: 1,
-        },
-        volume: masterVolume
-      });
-     
-    // poly.toDestination(); // Tone.Master
-    
-      // Create 2 different melodic motifs
-      motif = new Motif([3, 2, 1,  0, 1, 2, 3, 4, 5, 6, 7, 8], "xxxx---xxxxxxxx--","6n", "2n");
-      //let motif2 = new Motif([ 0, 1, 1, 2, 3, 4, 5, 5], "----xxxxxxxx", "1s", "2n"); // 7 -> one octaave higher
-      noise = new Tone.Noise("white").start();
-      noise.mute = true; 
-       autoFilter = new Tone.AutoFilter({
-	frequency: "1n",
-	baseFrequency: 250,
-	octaves: 1
-}).toDestination().start();
-// connect the noise
+  autoFilter = new Tone.AutoFilter({
+    frequency:"1n",
+    baseFrequency: "C3",
+    octaves: 0.75
+  }).toDestination().start();
+  // connect the noise
   noise.connect(autoFilter);
-// start the autofilter LFO
-      motif.synth.connect(autoFilter);
-    //  motif.synth.volume = -24; 
-    // motif.synth.toDestination();
-
-      //motif2.synth.toDestination();
-     // Tone.Transport.schedule(changeChord, "12");
-     /*elements[10].onanimationiteration = () => {
-      changeChord(1);
-      };*/
-      Tone.Transport.start();
+  // start the autofilter LFO
+  motif.synth.connect(autoFilter);
+  // Tone.Transport.schedule(changeChord, "12");
+  /*elements[10].onanimationiteration = () => {
+   changeChord(1);
+   };*/
+  Tone.Transport.start();
 }
 
 
@@ -335,15 +330,16 @@ function draw() {
                         Tone.Transport.stop(); 
                         autoFilter.stop();
                         noise.stop();
+                        bauch.classList.add("dissappearOrgan");
+                        lunge.classList.add("dissappearOrgan");
+                        bauch.classList.remove("breathRelax");
+                        lunge.classList.remove("breathRelax");
                        progress.classList.add("dissappear");
                        mund.classList.add("dissappear");
-                       bauch.classList.add("dissappear");
-                       lunge.classList.add("dissappear");
+                     
                        nase.classList.add("dissappear");
                        bar.classList.add("dissappear");
                        augen.classList.add("dissappear");
-
-                    
                        cloud.classList.add("cloudsuccess");
                        smile.classList.add("linesuccess");
                        line1.classList.add("linesuccess");
@@ -404,7 +400,7 @@ class Motif {
             }
           }, this.tempo);
       
-          this.loop.start(1);
+         // this.loop.start(1);
         }
       }
       

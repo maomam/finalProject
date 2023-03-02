@@ -3,24 +3,32 @@
   margin: 0;
 }
 
+html {
+  height: fill-available;
+  height: -webkit-fill-available;
+}
+
+
 
 body {
-  height: 100vh;
   background-color: #EAEAFA;
   font-family: 'Sono', sans-serif;
+  min-height: 100vh;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
 }
 
 .home {
+  height: 100dvh;
   display: grid;
   grid-template-rows: 1fr 10fr 1fr;
 }
 
 #contur {
-  width: 100%;
-  height: 100%;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
   z-index: -1;
   position: absolute;
-  left: 0;
 }
 
 circle {
@@ -80,6 +88,34 @@ circle {
 
 }
 
+@keyframes relaxTummy {
+  0% {
+    transform-origin: center;
+    transform: scale(0.75);
+
+  }
+
+  7% {
+    transform-origin: center;
+    transform: scale(0.8);
+  }
+
+  20% {
+    transform-origin: center;
+    transform: scale(1);
+  }
+
+  90% {
+    transform-origin: center;
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform-origin: center;
+    transform: scale(0.75);
+  }
+}
+
 @keyframes focus {
   0% {
     transform: translate(var(--dissolveX), var(--dissolveY));
@@ -116,6 +152,34 @@ circle {
     r: 30;
   }
 
+}
+
+@keyframes focusTummy {
+  0% {
+    transform-origin: center;
+    transform: scale(0.75);
+
+  }
+
+  7% {
+    transform-origin: center;
+    transform: scale(0.8);
+  }
+
+  52% {
+    transform-origin: center;
+    transform: scale(1);
+  }
+
+  80% {
+    transform-origin: center;
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform-origin: center;
+    transform: scale(0.75);
+  }
 }
 
 @keyframes energize {
@@ -155,6 +219,35 @@ circle {
   }
 
 }
+
+@keyframes energizeTummy {
+  0% {
+    transform-origin: center;
+    transform: scale(0.75);
+
+  }
+
+  7% {
+    transform-origin: center;
+    transform: scale(0.8);
+  }
+
+  52% {
+    transform-origin: center;
+    transform: scale(1);
+  }
+
+  85% {
+    transform-origin: center;
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform-origin: center;
+    transform: scale(0.75);
+  }
+}
+
 .material-symbols-outlined{
   font-size:200%;
   color: #413C8D;
@@ -235,6 +328,7 @@ h3 {
 .card-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-flow: row;
   flex-wrap: wrap;
   margin-left: 2vw;
@@ -327,8 +421,7 @@ ul {
   align-items: center;
   position: absolute;
   top: 0;
-  left: 0;
-  right:0;
+  width: -webkit-fill-available;
   z-index: 1;
 }
 
@@ -415,7 +508,16 @@ cursor: pointer;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
 
+.dissappearOrgan {
+  animation-name: dissappearOrgan;
+  transition: all ease-in-out;
+  animation-duration: 0.8s;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .appear {
@@ -426,7 +528,36 @@ cursor: pointer;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
 
+.breathRelax {
+  animation-name: relaxTummy;
+  transition: all ease-in-out;
+  animation-duration: 12s;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 5;
+  animation-fill-mode: forwards;
+}
+
+.breathFocus {
+  animation-name: focusTummy;
+  transition: all ease-in-out;
+  animation-duration: 7s;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 5;
+  animation-fill-mode: forwards;
+}
+
+.breathEnergize {
+  animation-name: focusTummy;
+  transition: all ease-in-out;
+  animation-duration: 3s;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 5;
+  animation-fill-mode: forwards;
 }
 
 @keyframes dissappear {
@@ -438,6 +569,23 @@ cursor: pointer;
   100% {
     opacity: 0;
     visibility: hidden;
+
+  }
+}
+
+@keyframes dissappearOrgan {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    transform-origin: center;
+    transform: scale(0.75);
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: center;
+    transform: scale(0.75);
 
   }
 }
@@ -561,7 +709,7 @@ cursor: pointer;
 }
 @media screen and (max-width: 740px) {
   nav.active {
-  width: 100%;
+  width: 100svw;
   bottom: 0rem; 
   padding-left: 1rem;
   padding-right: 1rem;
@@ -571,4 +719,9 @@ cursor: pointer;
   padding-right: 1rem;
   padding-left: 1rem;
 }
+
+.card {
+margin-right:0; 
+}
+
 }
