@@ -325,18 +325,18 @@ function draw() {
                        line3.classList.add("linesuccess");
                        
 
+                       const div = document.createElement("div");
                        const h2 = document.createElement("h2");
                        const textNode1 = document.createTextNode("You have made 5 breaths!");
                        h2.appendChild(textNode1);
-                       h2.classList.add("successtext");
-                       h2.classList.add("appear");
+                       div.appendChild(h2);
                        const h3 = document.createElement("h3");
                        const textNode2 = document.createTextNode("We hope you feel more energized.");
                        h3.appendChild(textNode2);
-                       h3.classList.add("successsub");
-                       h3.classList.add("appear");
-                       document.body.appendChild(h2);
-                       document.body.appendChild(h3);
+                       div.appendChild(h3);
+                       div.classList.add("appear");
+                       div.classList.add("successtext");
+                       document.body.appendChild(div);
                       }
                      
                 //let dur = anim[0].duration;

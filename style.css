@@ -286,24 +286,32 @@ header {
 #logo {
   width: 128px;
   height: 64px;
- /* background-image: url(svg/logo.svg);*/
   display: inline-flex;
-  /*background-size: cover;*/
+
+}
+#portrait {
+  width: 420px;
+  height: 280px;
+  margin: auto;
+  display: block;
+  margin-bottom: 2rem; ;
+
 }
 
 h1 {
   font-size: 2rem;
+  line-height: 2.5rem;
   font-weight: 800;
   color: #070751;
+  
 }
 
 h2 {
   font-size: 1.5rem;
   line-height: 2.5rem;
   font-weight: 700;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
   color: #070751;
+  margin-bottom: 0.4rem;
 }
 
 h3 {
@@ -316,10 +324,19 @@ h3 {
   margin-block-end: 0em;
 }
 
+p {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  font-family: Menlo, monospace;
+  color: #070751;
+  margin-bottom: 1rem;
+
+}
+
 .center {
   text-align: center;
-  margin-top: 3rem;
-  margin-bottom: 0.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
   margin-left: 0.75rem;
   margin-right: 0.75rem;
 
@@ -389,6 +406,7 @@ li:hover~li p {
 }
 
 
+
 footer {
   display: flex;
   width: 100%;
@@ -397,16 +415,6 @@ footer {
   line-height: 1.3;
   font-family: Menlo, monospace;
   align-self: flex-end;
-}
-
-ul {
-  display: inline-grid;
-  list-style-type: none;
-  /* Remove bullets */
-  grid-auto-flow: row;
-  grid-gap: 24px;
-  justify-items: center;
-  margin: auto;
 }
 
 
@@ -422,6 +430,16 @@ ul {
   top: 0;
   width: -webkit-fill-available;
   z-index: 1;
+}
+
+ul {
+  display: inline-grid;
+  list-style-type: none;
+  /* Remove bullets */
+  grid-auto-flow: row;
+  grid-gap: 24px;
+  justify-items: center;
+  margin: auto;
 }
 
 nav {
@@ -458,7 +476,6 @@ nav ul {
   grid-gap: 1rem;
   padding: 0;
   list-style: none;
- 
 }
 
 nav li {
@@ -487,16 +504,17 @@ cursor: pointer;
 
 .successtext {
   position: fixed;
-  top: 50%;
+  top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  width: 75%;
+  text-align: center;
+ transform: translate(-50%, -60%);
 }
-
-.successsub {
-  position: fixed;
-  top: 53%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.paragraph {
+  width: 50%;
+  margin: auto;
+  text-align: left;
+  margin-bottom: 2rem; ;
 }
 
 .dissappear {
@@ -721,6 +739,22 @@ cursor: pointer;
 
 .card  {
 margin-right: 0rem;
+}
+h1{
+  font-size: 1.7rem;
+}
+
+h2{
+  font-size: 1.25rem;
+  line-height: 1.4rem;
+}
+
+h3{
+  font-size: 1.05rem;
+
+}
+.paragraph {
+  width: 75%;
 }
 
 }
