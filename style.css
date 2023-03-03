@@ -294,8 +294,7 @@ header {
   height: 280px;
   margin: auto;
   display: block;
-  margin-bottom: 2rem; ;
-
+  margin-bottom: 2rem;
 }
 
 h1 {
@@ -755,6 +754,12 @@ h3{
 }
 .paragraph {
   width: 75%;
+}
+
+#portrait {
+  width: 336px;
+  height: 224px;
+  margin-bottom: 3rem;
 }
 
 }
