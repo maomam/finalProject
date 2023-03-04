@@ -310,7 +310,7 @@ h2 {
   line-height: 2.5rem;
   font-weight: 700;
   color: #070751;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 h3 {
@@ -328,14 +328,14 @@ p {
   line-height: 1.4rem;
   font-family: Menlo, monospace;
   color: #070751;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 
 }
 
 .center {
   text-align: center;
   margin-top: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   margin-left: 0.75rem;
   margin-right: 0.75rem;
 
@@ -359,7 +359,7 @@ p {
   font-size: 1.25rem;
   font-weight: 700; 
   padding: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-right: 2rem;
   border-radius: 16px;
 }
@@ -759,7 +759,7 @@ h3{
 #portrait {
   width: 336px;
   height: 224px;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 }
